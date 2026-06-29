@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRP Spices — PRP General Enterprises & Nigeria Ltd</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#B8892A;--gold-light:#D4A84B;--gold-pale:#F5EDD6;--gold-dark:#7A5A18;
+  --ink:#1A1208;--ink-mid:#3D2E14;--cream:#FAF6EE;--cream-deep:#F2EAD8;
+  --text:#2C1F0A;--muted:#7A6540;--white:#FFFFFF;
+  --green:#1A6B3A;--green-light:#2A8A4A;--green-pale:#E8F5EE;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,18,8,0.97);backdrop-filter:blur(10px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;border-bottom:1px solid rgba(184,137,42,0.18)}
+.nav-brand{display:flex;flex-direction:column;gap:1px;text-decoration:none}
+.nav-brand-name{font-family:var(--serif);font-size:22px;color:var(--gold-light);font-weight:500;letter-spacing:0.04em;line-height:1}
+.nav-brand-sub{font-size:9px;color:var(--gold);letter-spacing:0.16em;font-weight:300;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-cart{color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:color 0.2s;background:none;border:none;font-family:var(--sans)}
+.nav-cart:hover{color:var(--gold-light)}
+.cart-badge{background:var(--gold);color:var(--ink);border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.nav-cta{background:var(--gold);color:var(--ink);padding:8px 18px;border-radius:2px;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;font-weight:500;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--gold-light)}
+
+/* PAGE SYSTEM */
+.page{display:none}
+.page.active{display:block}
+
+/* HERO */
+.hero{min-height:100vh;background:#120D05;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 5% 60px}
+.hero-bg{position:absolute;inset:0;opacity:0.07;background-image:radial-gradient(circle at 1px 1px,#B8892A 1px,transparent 0);background-size:36px 36px}
+.hero-glow-a{position:absolute;left:-8%;top:20%;width:450px;height:450px;background:radial-gradient(circle,rgba(184,137,42,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-glow-b{position:absolute;right:-8%;bottom:20%;width:380px;height:380px;background:radial-gradient(circle,rgba(184,137,42,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:820px}
+.hero-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:26px;display:flex;align-items:center;justify-content:center;gap:12px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--gold);opacity:0.5}
+.hero-title{font-family:var(--serif);font-size:clamp(48px,8vw,96px);color:#fff;font-weight:500;line-height:1.02;margin-bottom:14px}
+.hero-title em{color:var(--gold-light);font-style:italic}
+.hero-desc{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:44px;font-weight:300;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.85}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:68px}
+.btn-gold{background:var(--gold);color:var(--ink);padding:14px 36px;border-radius:2px;text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:0.12em;font-weight:500;transition:all 0.25s;display:inline-block;border:none;cursor:pointer;font-family:var(--sans)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(184,137,42,0.45);color:var(--gold-light);padding:14px 36px;border-radius:2px;text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:0.12em;font-weight:300;transition:all 0.25s;display:inline-block}
+.btn-ghost:hover{border-color:var(--gold-light);color:#fff}
+.hero-stats{display:flex;border:1px solid rgba(184,137,42,0.2);border-radius:4px;overflow:hidden;width:fit-content;margin:0 auto}
+.stat-box{padding:18px 32px;text-align:center;border-right:1px solid rgba(184,137,42,0.2)}
+.stat-box:last-child{border-right:none}
+.stat-num{font-family:var(--serif);font-size:30px;color:var(--gold-light);line-height:1}
+.stat-lbl{font-size:9px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.14em;margin-top:4px}
+
+/* MARQUEE */
+.marquee-wrap{background:var(--gold);padding:12px 0;overflow:hidden}
+.marquee-track{display:flex;white-space:nowrap;animation:scroll 24s linear infinite}
+.m-item{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);font-weight:600;padding:0 24px}
+.m-sep{color:rgba(26,18,8,0.3)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:88px 5%}
+.eye{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500;display:flex;align-items:center;gap:10px}
+.eye::after{content:'';max-width:36px;height:1px;background:var(--gold);opacity:0.5}
+.sec-title{font-family:var(--serif);font-size:clamp(32px,4.5vw,54px);color:var(--ink);font-weight:500;line-height:1.08;margin-bottom:16px}
+.sec-lead{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300}
+
+/* ABOUT */
+.about{background:var(--white)}
+.about-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-frame{background:var(--cream-deep);border-radius:6px;aspect-ratio:3/4;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.float-a{position:absolute;top:20px;left:-20px;background:var(--gold);padding:14px 18px;border-radius:4px;text-align:center;z-index:2}
+.float-a div:first-child{font-size:20px}
+.float-a span{font-size:9px;color:var(--ink-mid);text-transform:uppercase;letter-spacing:0.1em;font-weight:600}
+.float-b{position:absolute;bottom:-20px;right:-20px;background:var(--ink);border:1px solid rgba(184,137,42,0.3);padding:20px 24px;border-radius:4px;min-width:120px;text-align:center;z-index:2}
+.float-b-num{font-family:var(--serif);font-size:32px;color:var(--gold-light);line-height:1}
+.float-b-txt{font-size:9px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em;margin-top:4px}
+.pillars{margin-top:40px;display:flex;flex-direction:column;gap:20px}
+.pillar{display:flex;gap:16px;align-items:flex-start;padding:18px;border:1px solid rgba(184,137,42,0.12);border-radius:4px;background:var(--cream);transition:border-color 0.2s}
+.pillar:hover{border-color:rgba(184,137,42,0.35)}
+.pico{width:42px;height:42px;background:var(--gold-pale);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.pillar h4{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px}
+.pillar p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* PRODUCT GRID */
+.products{background:var(--cream)}
+.prod-head{text-align:center;max-width:560px;margin:0 auto 56px}
+.prod-head .eye{justify-content:center}
+.prod-head .eye::after{display:none}
+.prod-head .eye::before{content:'';max-width:36px;height:1px;background:var(--gold);opacity:0.5}
+.filter-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+.fb{padding:8px 20px;border-radius:2px;border:1px solid rgba(184,137,42,0.3);background:transparent;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;color:var(--muted);font-family:var(--sans);transition:all 0.2s}
+.fb.on,.fb:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+
+/* PRODUCT CARD */
+.pc{background:var(--white);border-radius:6px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;border:1px solid rgba(184,137,42,0.1);cursor:pointer}
+.pc:hover{transform:translateY(-5px);box-shadow:0 18px 50px rgba(26,18,8,0.1)}
+.pc-img{aspect-ratio:1;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pc-img svg{width:100%;height:100%}
+.pc-badge{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--ink);font-size:9px;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:2px;font-weight:600;z-index:2}
+.pc-body{padding:20px}
+.pc-name{font-family:var(--serif);font-size:21px;color:var(--ink);font-weight:500;margin-bottom:6px}
+.pc-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pc-price{font-family:var(--serif);font-size:22px;color:var(--gold-dark);font-weight:600;white-space:nowrap}
+.pc-price small{font-size:12px;color:var(--muted);font-family:var(--sans);font-weight:300;margin-left:3px}
+.pc-add{background:var(--ink);color:var(--gold-light);border:none;padding:9px 16px;border-radius:2px;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;font-family:var(--sans);transition:all 0.2s;white-space:nowrap}
+.pc-add:hover{background:var(--gold);color:var(--ink)}
+
+/* NATURAL PAGE HERO */
+.nat-hero{background:linear-gradient(135deg,#0A1E0E 0%,#162C1A 50%,#1E3A22 100%);min-height:60vh;display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden}
+.nat-hero-bg{position:absolute;inset:0;opacity:0.06;background-image:radial-gradient(circle at 1px 1px,#2A8A4A 1px,transparent 0);background-size:32px 32px}
+.nat-hero-glow{position:absolute;right:10%;top:20%;width:400px;height:400px;background:radial-gradient(circle,rgba(42,138,74,0.15) 0%,transparent 70%);pointer-events:none}
+.nat-hero-content{position:relative;z-index:1;max-width:680px}
+.nat-eye{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#5CB85C;margin-bottom:20px;font-weight:400;display:flex;align-items:center;gap:10px}
+.nat-eye::after{content:'';width:36px;height:1px;background:#5CB85C;opacity:0.5}
+.nat-hero h1{font-family:var(--serif);font-size:clamp(40px,6vw,72px);color:#fff;font-weight:500;line-height:1.06;margin-bottom:16px}
+.nat-hero h1 em{color:#7AD87A;font-style:italic}
+.nat-hero p{font-size:15px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.85;max-width:480px;margin-bottom:36px}
+.btn-green{background:#2A8A4A;color:#fff;padding:14px 36px;border-radius:2px;text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:0.12em;font-weight:500;transition:all 0.25s;display:inline-block;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-green:hover{background:#3A9A5A;transform:translateY(-2px)}
+
+/* NAT PRODUCT CARDS */
+.nat-products{background:var(--cream)}
+.nat-grid{display:grid;grid-template-columns:1fr;gap:0;max-width:1200px;margin:0 auto}
+.nat-card{background:var(--white);border-radius:6px;overflow:hidden;margin-bottom:32px;border:1px solid rgba(42,138,74,0.12);display:grid;grid-template-columns:420px 1fr}
+.nat-card:nth-child(even){grid-template-columns:1fr 420px}
+.nat-card:nth-child(even) .nat-card-img{order:2}
+.nat-card:nth-child(even) .nat-card-body{order:1}
+.nat-card-img{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:380px}
+.nat-card-img svg{width:100%;height:100%;object-fit:cover}
+.nat-card-body{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.nat-card-eye{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--green);margin-bottom:12px;font-weight:500}
+.nat-card-name{font-family:var(--serif);font-size:42px;color:var(--ink);font-weight:500;line-height:1.05;margin-bottom:14px}
+.nat-card-tagline{font-family:var(--serif);font-size:18px;color:var(--muted);font-style:italic;margin-bottom:20px}
+.nat-card-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.nat-benefits{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.nb{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text)}
+.nb::before{content:'✓';color:var(--green);font-weight:600;font-size:14px;flex-shrink:0}
+.nat-card-footer{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.nat-price{font-family:var(--serif);font-size:28px;color:var(--gold-dark);font-weight:600}
+.nat-price small{font-size:13px;color:var(--muted);font-family:var(--sans)}
+.nat-badge{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;padding:6px 14px;border-radius:20px;font-weight:600}
+.nb-green{background:var(--green-pale);color:var(--green)}
+.nb-gold{background:var(--gold-pale);color:var(--gold-dark)}
+
+/* PROCESS */
+.process{background:var(--ink);padding:88px 5%}
+.proc-head{text-align:center;margin-bottom:64px}
+.proc-head .eye{color:var(--gold);justify-content:center}
+.proc-head .eye::after{display:none}
+.proc-head .eye::before{content:'';max-width:36px;height:1px;background:var(--gold);opacity:0.5}
+.proc-head .sec-title{color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(184,137,42,0.15);border:1px solid rgba(184,137,42,0.15);border-radius:4px;overflow:hidden;max-width:1100px;margin:0 auto}
+.step{background:var(--ink);padding:40px 28px}
+.step:hover{background:#211608}
+.step-n{font-family:var(--serif);font-size:60px;color:rgba(184,137,42,0.14);line-height:1;margin-bottom:14px}
+.step-ico{font-size:28px;margin-bottom:12px}
+.step h3{font-family:var(--serif);font-size:22px;color:#fff;font-weight:500;margin-bottom:10px}
+.step p{font-size:13px;color:rgba(255,255,255,0.38);line-height:1.8}
+
+/* WHY */
+.why{background:var(--cream-deep)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;margin:56px auto 0}
+.wc{background:var(--white);border-radius:6px;padding:32px 28px;border:1px solid rgba(184,137,42,0.1);transition:border-color 0.2s,transform 0.2s}
+.wc:hover{border-color:rgba(184,137,42,0.4);transform:translateY(-4px)}
+.wc-ico{font-size:28px;margin-bottom:16px}
+.wc h3{font-family:var(--serif);font-size:22px;color:var(--ink);font-weight:500;margin-bottom:10px}
+.wc p{font-size:13px;color:var(--muted);line-height:1.75}
+
+/* TESTIMONIALS */
+.testi{background:var(--white)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;margin:56px auto 0}
+.tc{background:var(--cream);border-radius:6px;padding:32px;border:1px solid rgba(184,137,42,0.12)}
+.tc-stars{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:16px}
+.tc-text{font-family:var(--serif);font-size:18px;color:var(--ink);line-height:1.65;font-style:italic;margin-bottom:22px}
+.tc-foot{display:flex;align-items:center;gap:12px}
+.tc-av{width:42px;height:42px;border-radius:50%;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;color:var(--gold-dark);font-weight:600;flex-shrink:0}
+.tc-name{font-size:14px;font-weight:500;color:var(--ink)}
+.tc-loc{font-size:11px;color:var(--muted)}
+
+/* GALLERY */
+.gallery{background:var(--ink);padding:88px 5%}
+.gal-head{text-align:center;margin-bottom:52px}
+.gal-head .eye{color:var(--gold);justify-content:center}
+.gal-head .eye::after{display:none}
+.gal-head .eye::before{content:'';max-width:36px;height:1px;background:var(--gold);opacity:0.5}
+.gal-head .sec-title{color:#fff}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;max-width:1200px;margin:0 auto}
+.gi{aspect-ratio:1;overflow:hidden;border-radius:2px;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.gi svg{width:100%;height:100%;transition:transform 0.4s}
+.gi:hover svg{transform:scale(1.07)}
+.gi-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,18,8,0.9),transparent);padding:20px 12px 12px;font-family:var(--serif);font-size:14px;color:var(--gold-light);font-style:italic}
+
+/* ORDER */
+.order-sec{background:var(--white)}
+.order-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cblocks{display:flex;flex-direction:column;gap:18px;margin-top:36px}
+.cb{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(184,137,42,0.12);border-radius:4px;background:var(--cream)}
+.cb-ico{width:42px;height:42px;background:var(--gold-pale);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cb h4{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:3px;text-transform:uppercase;letter-spacing:0.06em}
+.cb p{font-size:13px;color:var(--muted);line-height:1.55}
+.oform{background:var(--cream);padding:40px;border-radius:6px;border:1px solid rgba(184,137,42,0.15)}
+.oform h3{font-family:var(--serif);font-size:28px;color:var(--ink);margin-bottom:6px;font-weight:500}
+.oform > p{font-size:13px;color:var(--muted);margin-bottom:28px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:7px;font-weight:500}
+.fg input,.fg select,.fg textarea{width:100%;padding:12px 14px;border:1px solid rgba(184,137,42,0.22);border-radius:3px;background:var(--white);font-family:var(--sans);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg textarea{resize:vertical;min-height:100px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pay-btns{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.pay-btn-primary{width:100%;background:var(--gold);color:var(--ink);border:none;padding:14px;border-radius:3px;font-size:12px;text-transform:uppercase;letter-spacing:0.14em;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background 0.2s}
+.pay-btn-primary:hover{background:var(--gold-light)}
+.pay-btn-secondary{width:100%;background:var(--white);color:var(--text);border:1px solid rgba(184,137,42,0.3);padding:13px;border-radius:3px;font-size:12px;text-transform:uppercase;letter-spacing:0.14em;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.pay-btn-secondary:hover{border-color:var(--gold);color:var(--gold-dark)}
+.pay-divider{text-align:center;font-size:11px;color:var(--muted);margin:4px 0;letter-spacing:0.08em;text-transform:uppercase}
+.pay-secure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--muted);margin-top:12px}
+
+/* FOOTER */
+footer{background:#0E0A04;color:rgba(255,255,255,0.45);padding:64px 5% 28px;border-top:1px solid rgba(184,137,42,0.12)}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.fb-name{font-family:var(--serif);font-size:26px;color:var(--gold-light);font-weight:500;margin-bottom:6px}
+.fb-sub{font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:14px}
+.fb-about{font-size:13px;line-height:1.8;max-width:270px}
+.fsocial{display:flex;gap:8px;margin-top:18px}
+.fs-btn{width:34px;height:34px;border:1px solid rgba(184,137,42,0.25);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;transition:all 0.2s;text-decoration:none;color:rgba(255,255,255,0.4)}
+.fs-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.fcol h5{font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:18px;font-weight:600}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fcol a{color:rgba(255,255,255,0.38);text-decoration:none;font-size:13px;transition:color 0.2s;cursor:pointer}
+.fcol a:hover{color:var(--gold-light)}
+.foot-bot{border-top:1px solid rgba(255,255,255,0.06);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:11px;flex-wrap:wrap;gap:8px}
+
+/* WHATSAPP BUTTON */
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:200;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:all 0.25s;animation:wapulse 2.5s ease-in-out infinite}
+.wa-btn:hover{background:#1DA851;transform:scale(1.1);animation:none}
+.wa-btn svg{width:30px;height:30px;fill:#fff}
+.wa-tooltip{position:fixed;bottom:36px;right:96px;background:var(--ink);color:#fff;font-size:12px;padding:8px 14px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid rgba(184,137,42,0.2)}
+.wa-btn:hover ~ .wa-tooltip{opacity:1}
+@keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.6)}}
+
+/* TOAST */
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--gold);color:var(--ink);padding:12px 26px;border-radius:40px;font-size:14px;font-weight:500;z-index:999;opacity:0;transition:all 0.3s;pointer-events:none;white-space:nowrap}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1}
+
+/* CART BAR */
+.cart-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);border-top:1px solid rgba(184,137,42,0.3);padding:14px 5%;display:none;align-items:center;justify-content:space-between;z-index:90}
+.cart-bar.show{display:flex}
+.ci{color:rgba(255,255,255,0.7);font-size:13px}
+.ci span{color:var(--gold-light);font-weight:500}
+.co-btn{background:var(--gold);color:var(--ink);border:none;padding:11px 28px;border-radius:2px;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;cursor:pointer;font-family:var(--sans)}
+.co-btn:hover{background:var(--gold-light)}
+
+/* PAYMENT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex}
+.modal{background:var(--white);border-radius:8px;max-width:480px;width:100%;padding:40px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);line-height:1}
+.modal h3{font-family:var(--serif);font-size:26px;color:var(--ink);margin-bottom:6px;font-weight:500}
+.modal > p{font-size:13px;color:var(--muted);margin-bottom:24px}
+.cart-summary{background:var(--cream);border-radius:4px;padding:16px;margin-bottom:20px}
+.cart-summary h4{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:12px}
+.cart-line{display:flex;justify-content:space-between;font-size:13px;color:var(--text);padding:4px 0;border-bottom:1px solid rgba(184,137,42,0.1)}
+.cart-line:last-child{border-bottom:none;font-weight:500;color:var(--ink);font-size:15px;padding-top:10px}
+.modal .fg{margin-bottom:14px}
+.pay-methods{display:flex;gap:8px;margin-bottom:16px}
+.pm{flex:1;border:1px solid rgba(184,137,42,0.2);border-radius:4px;padding:10px 8px;text-align:center;cursor:pointer;transition:all 0.2s;font-size:11px;color:var(--muted)}
+.pm.sel{border-color:var(--gold);background:var(--gold-pale);color:var(--gold-dark);font-weight:500}
+.pm-icon{font-size:20px;display:block;margin-bottom:4px}
+.paystack-note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:4px}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .steps{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .about-grid,.order-grid{grid-template-columns:1fr;gap:48px}
+  .float-b{right:0;bottom:0}
+  .float-a{left:0}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nat-card,.nat-card:nth-child(even){grid-template-columns:1fr;grid-template-rows:auto auto}
+  .nat-card:nth-child(even) .nat-card-img,.nat-card:nth-child(even) .nat-card-body{order:unset}
+  .nat-card-img{min-height:280px}
+  .nat-card-body{padding:36px 28px}
+  .nav-links{display:none}
+}
+@media(max-width:560px){
+  .steps,.why-grid,.testi-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap}
+  .stat-box{border-right:none;border-bottom:1px solid rgba(184,137,42,0.2)}
+  .fg-row{grid-template-columns:1fr}
+  .pay-methods{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" onclick="showPage('home')" href="#">
+    <span class="nav-brand-name">PRP Spices</span>
+    <span class="nav-brand-sub">PRP General Enterprises Nigeria Ltd</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" id="nav-home">Home</a></li>
+    <li><a href="#" onclick="showPage('spices')" id="nav-spices">Spices & Herbs</a></li>
+    <li><a href="#" onclick="showPage('natural')" id="nav-natural">Natural Products</a></li>
+    <li><a href="#" onclick="goOrder()" id="nav-order">Order</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-cart" onclick="openPayModal()">
+      🛒 Cart <div class="cart-badge" id="cartBadge">0</div>
+    </button>
+    <a href="#" class="nav-cta" onclick="goOrder()">Order Now</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HOME PAGE ═══════════════ -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-glow-a"></div>
+    <div class="hero-glow-b"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">PRP General Enterprises &amp; Nigeria Ltd</div>
+      <h1 class="hero-title">Nigeria's Finest<br><em>Spices &amp; Natural Products</em></h1>
+      <p class="hero-desc">Premium quality spices, natural herbs, and wholesome foods sourced directly from Nigeria's fertile soils — pure, potent, and crafted for discerning tastes.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-gold" onclick="showPage('spices')">Shop Spices & Herbs</a>
+        <a href="#" class="btn-ghost" onclick="showPage('natural')">Natural Products</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl">Natural &amp; Pure</div></div>
+        <div class="stat-box"><div class="stat-num">50+</div><div class="stat-lbl">Products</div></div>
+        <div class="stat-box"><div class="stat-num">10+</div><div class="stat-lbl">Years Experience</div></div>
+        <div class="stat-box"><div class="stat-num">🇳🇬</div><div class="stat-lbl">Nigeria Grown</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="mq">
+      <span class="m-item">Premium Spices</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Natural Herbs</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Tigernut &amp; Dates</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Zobo Hibiscus</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">100% Nigerian</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Wholesale Available</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Nationwide Delivery</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Premium Spices</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Natural Herbs</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Tigernut &amp; Dates</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Zobo Hibiscus</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">100% Nigerian</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Wholesale Available</span><span class="m-sep"> ✦ </span>
+      <span class="m-item">Nationwide Delivery</span><span class="m-sep"> ✦ </span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div style="position:relative">
+        <div class="about-frame">
+          <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <defs>
+              <radialGradient id="abg"><stop offset="0%" stop-color="#F5EDD6"/><stop offset="100%" stop-color="#E8D8B0"/></radialGradient>
+              <radialGradient id="tg" cx="40%" cy="30%"><stop offset="0%" stop-color="#F4C430"/><stop offset="100%" stop-color="#C8860A"/></radialGradient>
+              <radialGradient id="pg" cx="40%" cy="30%"><stop offset="0%" stop-color="#E8402A"/><stop offset="100%" stop-color="#8B1A0A"/></radialGradient>
+              <radialGradient id="hg" cx="40%" cy="30%"><stop offset="0%" stop-color="#5CB85C"/><stop offset="100%" stop-color="#2D6A2D"/></radialGradient>
+            </defs>
+            <rect width="400" height="520" fill="url(#abg)"/>
+            <circle cx="80" cy="80" r="60" fill="#D4A84B" opacity="0.12"/>
+            <circle cx="320" cy="440" r="80" fill="#B8892A" opacity="0.1"/>
+            <ellipse cx="200" cy="380" rx="130" ry="50" fill="#8B6914" opacity="0.9"/>
+            <path d="M70 380 Q70 480 200 490 Q330 480 330 380" fill="#7A5A18"/>
+            <ellipse cx="200" cy="380" rx="130" ry="50" fill="#A07820" opacity="0.8"/>
+            <ellipse cx="200" cy="375" rx="115" ry="42" fill="#C89628"/>
+            <ellipse cx="200" cy="372" rx="100" ry="32" fill="#F4C430" opacity="0.9"/>
+            <ellipse cx="200" cy="370" rx="85" ry="25" fill="#EDB820" opacity="0.7"/>
+            <rect x="175" y="280" width="50" height="100" rx="25" fill="#6B4A12"/>
+            <ellipse cx="200" cy="280" rx="25" ry="15" fill="#8B6014"/>
+            <rect x="185" y="200" width="30" height="90" rx="15" fill="#7A5518"/>
+            <ellipse cx="120" cy="200" rx="28" ry="18" fill="url(#tg)" transform="rotate(-20,120,200)"/>
+            <ellipse cx="290" cy="160" rx="22" ry="15" fill="url(#tg)" transform="rotate(15,290,160)"/>
+            <path d="M310 240 Q330 220 340 240 Q350 260 330 275 Q315 265 310 240Z" fill="url(#pg)"/>
+            <path d="M330 220 Q333 210 328 205" stroke="#2D6A2D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M80 260 Q60 240 70 260 Q75 280 90 285 Q100 270 80 260Z" fill="url(#pg)"/>
+            <ellipse cx="150" cy="140" rx="18" ry="8" fill="url(#hg)" transform="rotate(-35,150,140)"/>
+            <ellipse cx="260" cy="120" rx="20" ry="9" fill="url(#hg)" transform="rotate(25,260,120)"/>
+            <ellipse cx="170" cy="110" rx="15" ry="7" fill="#4A9A4A" transform="rotate(-50,170,110)"/>
+            <circle cx="240" cy="220" r="5" fill="#4A2C10"/>
+            <circle cx="248" cy="230" r="5" fill="#5A3818"/>
+            <circle cx="232" cy="235" r="5" fill="#4A2C10"/>
+            <path d="M240 215 Q242 208 240 203" stroke="#3A2008" stroke-width="2" fill="none"/>
+            <path d="M248 225 Q250 218 248 213" stroke="#3A2008" stroke-width="2" fill="none"/>
+            <path d="M232 230 Q234 223 232 218" stroke="#3A2008" stroke-width="2" fill="none"/>
+            <path d="M60 170 Q75 155 90 165 Q100 175 90 190 Q80 200 65 190 Q55 182 60 170Z" fill="#D4A520"/>
+            <path d="M85 158 Q95 145 108 152 Q115 162 105 172 Q98 176 90 168" fill="#C89010"/>
+            <text x="200" y="492" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="13" fill="#7A5A18" font-style="italic" opacity="0.8">Sourced from Nigeria's Heart</text>
+          </svg>
+        </div>
+        <div class="float-a"><div>🌿</div><span>100% Natural</span></div>
+        <div class="float-b"><div class="float-b-num">10+</div><div class="float-b-txt">Years of Excellence</div></div>
+      </div>
+      <div>
+        <p class="eye">Who We Are</p>
+        <h2 class="sec-title">Rooted in Nigeria's<br>Natural Heritage</h2>
+        <p class="sec-lead">PRP General Enterprises &amp; Nigeria Ltd curates the finest spices, natural herbs, and wholesome foods from across Nigeria's fertile regions — bringing authentic flavour and healing traditions to your home and business.</p>
+        <div class="pillars">
+          <div class="pillar"><div class="pico">🌱</div><div><h4>Naturally Sourced</h4><p>Hand-selected from trusted Nigerian farmers using no harmful chemicals or pesticides.</p></div></div>
+          <div class="pillar"><div class="pico">✨</div><div><h4>Premium Quality</h4><p>Every batch is inspected, cleaned, sun-dried and packed to retain maximum potency.</p></div></div>
+          <div class="pillar"><div class="pico">🚚</div><div><h4>Nationwide Delivery</h4><p>Fast, secure delivery to homes and businesses across all 36 states in Nigeria.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products (home) -->
+  <section class="products" id="featured">
+    <div class="prod-head">
+      <p class="eye">Featured Products</p>
+      <h2 class="sec-title">Our Most Popular Picks</h2>
+      <p class="sec-lead">Browse our bestsellers or explore the full range.</p>
+    </div>
+    <div class="pgrid" id="featGrid"></div>
+    <div style="text-align:center;margin-top:48px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#" class="btn-gold" onclick="showPage('spices')">All Spices & Herbs →</a>
+      <a href="#" class="btn-ghost" onclick="showPage('natural')">Natural Products →</a>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="proc-head">
+      <p class="eye">How We Work</p>
+      <h2 class="sec-title" style="color:#fff">From Farm to Your Table</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-n">01</div><div class="step-ico">🌾</div><h3>Farm Sourcing</h3><p>Direct partnerships with Nigerian farmers across fertile states — fair trade, top-tier produce.</p></div>
+      <div class="step"><div class="step-n">02</div><div class="step-ico">🔍</div><h3>Quality Inspection</h3><p>Every batch hand-sorted and tested for purity, aroma, and potency before processing.</p></div>
+      <div class="step"><div class="step-n">03</div><div class="step-ico">☀️</div><h3>Natural Processing</h3><p>Sun-drying and hygienic milling preserves essential oils and full flavour profiles.</p></div>
+      <div class="step"><div class="step-n">04</div><div class="step-ico">📦</div><h3>Premium Packaging</h3><p>Airtight food-grade packs that lock in freshness for retail, restaurant, and delivery orders.</p></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <p class="eye">Why Choose PRP</p>
+    <h2 class="sec-title">The PRP Spices Difference</h2>
+    <div class="why-grid">
+      <div class="wc"><div class="wc-ico">🌿</div><h3>100% Pure &amp; Natural</h3><p>No artificial colours, preservatives, or additives. Pure spice or herb, nothing else.</p></div>
+      <div class="wc"><div class="wc-ico">🤝</div><h3>Wholesale &amp; Retail</h3><p>From small home packs to tonnes for factories — competitive pricing at every scale.</p></div>
+      <div class="wc"><div class="wc-ico">🏆</div><h3>Trusted Quality</h3><p>Over a decade of consistent quality and honest business across Nigeria.</p></div>
+      <div class="wc"><div class="wc-ico">⚡</div><h3>Fast Processing</h3><p>Orders placed by noon processed same day — covering Abuja, Lagos, Kano and beyond.</p></div>
+      <div class="wc"><div class="wc-ico">💰</div><h3>Competitive Pricing</h3><p>Farm-direct sourcing means premium quality at fair, honest prices — always.</p></div>
+      <div class="wc"><div class="wc-ico">📋</div><h3>Custom Orders</h3><p>Need a specific blend or private label? We create bespoke solutions for your business.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi">
+    <p class="eye">Customer Reviews</p>
+    <h2 class="sec-title">Trusted by Homes &amp; Businesses</h2>
+    <div class="testi-grid">
+      <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"PRP Spices transformed my restaurant. The suya blend is perfectly authentic — every customer asks what our secret is."</p><div class="tc-foot"><div class="tc-av">AM</div><div><div class="tc-name">Amaka Musa</div><div class="tc-loc">Restaurant Owner, Abuja</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"I've ordered tigernut and zobo in bulk for two years. Quality never dips and wholesale pricing is very fair."</p><div class="tc-foot"><div class="tc-av">JO</div><div><div class="tc-name">James Okonkwo</div><div class="tc-loc">Wholesale Distributor, Lagos</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"The moringa and scent leaf are incredibly potent. You can smell the freshness the moment you open the pack."</p><div class="tc-foot"><div class="tc-av">FH</div><div><div class="tc-name">Fatima Hassan</div><div class="tc-loc">Home Cook, Kano</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="gal-head">
+      <p class="eye">Our Gallery</p>
+      <h2 class="sec-title" style="color:#fff">Nature's Finest, Up Close</h2>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+  </section>
+
+  <!-- ORDER -->
+  <section class="order-sec" id="order-sec">
+    <div class="order-grid">
+      <div>
+        <p class="eye">Place an Order</p>
+        <h2 class="sec-title">Ready to Order<br>or Have a Question?</h2>
+        <p class="sec-lead">Whether you're a home buyer, restaurant, or wholesale distributor — fill the form and we'll be in touch within 24 hours.</p>
+        <div class="cblocks">
+          <div class="cb"><div class="cb-ico">📍</div><div><h4>Our Office</h4><p>PRP General Enterprises &amp; Nigeria Ltd, Nigeria</p></div></div>
+          <div class="cb"><div class="cb-ico">📞</div><div><h4>Phone &amp; WhatsApp</h4><p>Click the green WhatsApp button to chat with us directly — instant response.</p></div></div>
+          <div class="cb"><div class="cb-ico">🕐</div><div><h4>Business Hours</h4><p>Monday – Saturday: 8:00 AM – 6:00 PM</p></div></div>
+          <div class="cb"><div class="cb-ico">🚚</div><div><h4>Delivery</h4><p>Nationwide across all 36 states. Retail and wholesale welcome.</p></div></div>
+        </div>
+      </div>
+      <div class="oform" id="orderForm">
+        <h3>Send Us a Message</h3>
+        <p>We respond to all enquiries within 24 hours on business days.</p>
+        <div class="fg-row">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="e.g. Amaka" id="fn"></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="e.g. Okafor" id="ln"></div>
+        </div>
+        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+234 800 000 0000" id="ph"></div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com" id="em"></div>
+        <div class="fg"><label>Location / City</label><input type="text" placeholder="e.g. Abuja, Lagos, Kano…" id="loc"></div>
+        <div class="fg"><label>Order Type</label>
+          <select id="otype">
+            <option value="">Select order type</option>
+            <option>Retail — personal / home use</option>
+            <option>Wholesale — bulk purchase</option>
+            <option>Restaurant / food business</option>
+            <option>Reselling / distribution</option>
+            <option>Custom blend / private label</option>
+            <option>General enquiry</option>
+          </select>
+        </div>
+        <div class="fg"><label>Products &amp; Message</label><textarea placeholder="Tell us which spices, herbs, or natural products you need, quantities, and any requirements…" id="msg"></textarea></div>
+        <div class="pay-btns">
+          <button class="pay-btn-primary" onclick="submitForm()">Send Message</button>
+          <div class="pay-divider">— or pay directly —</div>
+          <button class="pay-btn-secondary" onclick="openPayModal()">
+            <span>💳</span> Pay with Card / Bank Transfer
+          </button>
+        </div>
+        <div class="pay-secure">🔒 Secured by Paystack — all major cards &amp; bank transfers accepted</div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end home page -->
+
+<!-- ═══════════════ SPICES PAGE ═══════════════ -->
+<div id="page-spices" class="page">
+  <div style="background:linear-gradient(135deg,#1A1208 0%,#2C1F0A 100%);padding:120px 5% 72px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;opacity:0.06;background-image:radial-gradient(circle at 1px 1px,#B8892A 1px,transparent 0);background-size:32px 32px"></div>
+    <div style="position:relative;max-width:680px">
+      <p class="eye" style="color:var(--gold)">Spices &amp; Natural Herbs</p>
+      <h1 style="font-family:var(--serif);font-size:clamp(40px,6vw,72px);color:#fff;font-weight:500;line-height:1.06;margin-bottom:14px">Bold Flavours from<br><em style="color:var(--gold-light);font-style:italic">Nigeria's Heartland</em></h1>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.85;max-width:480px;margin-bottom:36px">Every spice and herb is sourced, dried, and packed right here in Nigeria — vibrant, aromatic, and wonderfully potent.</p>
+    </div>
+  </div>
+  <section class="products">
+    <div class="filter-row">
+      <button class="fb on" onclick="filterS('all',this)">All Products</button>
+      <button class="fb" onclick="filterS('spice',this)">Spices</button>
+      <button class="fb" onclick="filterS('herb',this)">Herbs</button>
+      <button class="fb" onclick="filterS('blend',this)">Blends</button>
+      <button class="fb" onclick="filterS('dried',this)">Dried</button>
+    </div>
+    <div class="pgrid" id="spiceGrid"></div>
+  </section>
+</div>
+
+<!-- ═══════════════ NATURAL PRODUCTS PAGE ═══════════════ -->
+<div id="page-natural" class="page">
+
+  <div class="nat-hero">
+    <div class="nat-hero-bg"></div>
+    <div class="nat-hero-glow"></div>
+    <div class="nat-hero-content">
+      <div class="nat-eye">Natural &amp; Wholesome Products</div>
+      <h1>Nourishing Foods<br><em>From Nature's Best</em></h1>
+      <p>Beyond spices — our premium natural foods range brings you tigernut, dates, and hibiscus (zobo) in their purest form. Wholesome, nutritious, and beautifully Nigerian.</p>
+      <button class="btn-green" onclick="document.getElementById('nat-prods').scrollIntoView({behavior:'smooth'})">Explore the Range</button>
+    </div>
+  </div>
+
+  <!-- NAT PRODUCTS -->
+  <section class="nat-products" id="nat-prods" style="background:var(--cream);padding:88px 5%">
+    <div style="max-width:1200px;margin:0 auto">
+
+      <!-- TIGERNUT -->
+      <div class="nat-card" id="tigernut-card">
+        <div class="nat-card-img" style="background:linear-gradient(135deg,#2A1A00,#1A0E00)">
+          <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <defs>
+              <radialGradient id="tng" cx="50%" cy="50%"><stop offset="0%" stop-color="#D4A020"/><stop offset="100%" stop-color="#6A4A08"/></radialGradient>
+              <radialGradient id="tnbg" cx="50%" cy="50%"><stop offset="0%" stop-color="#3A2200"/><stop offset="100%" stop-color="#180E00"/></radialGradient>
+              <radialGradient id="tnmilk" cx="50%" cy="50%"><stop offset="0%" stop-color="#F5EDD6"/><stop offset="100%" stop-color="#D4C090"/></radialGradient>
+            </defs>
+            <rect width="480" height="420" fill="url(#tnbg)"/>
+            <!-- glow -->
+            <circle cx="240" cy="210" r="160" fill="#C89020" opacity="0.08"/>
+            <!-- scattered tigernuts -->
+            <!-- large group centre -->
+            <ellipse cx="210" cy="220" rx="26" ry="22" fill="url(#tng)"/>
+            <ellipse cx="207" cy="217" rx="18" ry="14" fill="#D4A830" opacity="0.6"/>
+            <circle cx="210" cy="220" r="5" fill="#6A4A08" opacity="0.4"/>
+            <ellipse cx="248" cy="215" rx="24" ry="20" fill="#C89020"/>
+            <ellipse cx="245" cy="212" rx="16" ry="13" fill="#D4A830" opacity="0.6"/>
+            <ellipse cx="232" cy="248" rx="22" ry="19" fill="#BA8018"/>
+            <ellipse cx="229" cy="245" rx="15" ry="12" fill="#C89020" opacity="0.6"/>
+            <ellipse cx="268" cy="243" rx="21" ry="18" fill="#C89020"/>
+            <ellipse cx="265" cy="240" rx="14" ry="11" fill="#D4A830" opacity="0.5"/>
+            <ellipse cx="220" cy="178" rx="20" ry="17" fill="#BA8018"/>
+            <ellipse cx="217" cy="175" rx="13" ry="11" fill="#C89020" opacity="0.6"/>
+            <ellipse cx="255" cy="180" rx="19" ry="16" fill="#D4A020"/>
+            <!-- smaller scattered -->
+            <ellipse cx="160" cy="195" rx="16" ry="14" fill="#C08010"/>
+            <ellipse cx="300" cy="200" rx="17" ry="15" fill="#BA7A10"/>
+            <ellipse cx="170" cy="240" rx="15" ry="13" fill="#C89020"/>
+            <ellipse cx="295" cy="250" rx="16" ry="14" fill="#C08018"/>
+            <ellipse cx="190" cy="270" rx="14" ry="12" fill="#B87810"/>
+            <ellipse cx="278" cy="275" rx="15" ry="13" fill="#C08018"/>
+            <ellipse cx="145" cy="155" rx="13" ry="11" fill="#B87010" opacity="0.8"/>
+            <ellipse cx="315" cy="160" rx="12" ry="10" fill="#C08018" opacity="0.8"/>
+            <ellipse cx="155" cy="285" rx="11" ry="9" fill="#B07010" opacity="0.7"/>
+            <ellipse cx="310" cy="285" rx="12" ry="10" fill="#B87810" opacity="0.7"/>
+            <!-- texture dots on nuts -->
+            <circle cx="213" cy="222" r="2.5" fill="#7A5808" opacity="0.5"/>
+            <circle cx="250" cy="217" r="2" fill="#7A5808" opacity="0.5"/>
+            <circle cx="235" cy="250" r="2.5" fill="#7A5808" opacity="0.5"/>
+            <!-- glass of tigernut milk -->
+            <rect x="330" y="130" width="90" height="140" rx="8" fill="url(#tnmilk)" opacity="0.92"/>
+            <rect x="330" y="130" width="90" height="140" rx="8" fill="none" stroke="#C8A040" stroke-width="1.5"/>
+            <ellipse cx="375" cy="130" rx="45" ry="12" fill="#F0E4C0" opacity="0.95"/>
+            <ellipse cx="375" cy="130" rx="45" ry="12" fill="none" stroke="#C8A040" stroke-width="1.5"/>
+            <ellipse cx="375" cy="132" rx="38" ry="8" fill="#E8D8A0" opacity="0.5"/>
+            <!-- straw -->
+            <rect x="390" y="90" width="6" height="100" rx="3" fill="#D4A84B" opacity="0.8"/>
+            <!-- leaf garnish -->
+            <path d="M340 140 Q355 125 365 138" fill="#3A7A28" opacity="0.8"/>
+            <!-- label area -->
+            <rect x="340" y="175" width="70" height="50" rx="3" fill="rgba(184,137,42,0.15)"/>
+            <text x="375" y="196" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" fill="#7A5A18" font-weight="600">TIGERNUT</text>
+            <text x="375" y="212" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#9A7A30">PRP Spices</text>
+            <!-- ground powder -->
+            <ellipse cx="220" cy="310" rx="85" ry="22" fill="#C89020" opacity="0.35"/>
+            <ellipse cx="220" cy="308" rx="70" ry="16" fill="#D4A830" opacity="0.25"/>
+            <text x="240" y="375" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="16" fill="#D4A84B" font-style="italic" opacity="0.9">Tigernut (Cyperus esculentus)</text>
+          </svg>
+        </div>
+        <div class="nat-card-body">
+          <div class="nat-card-eye">Natural Superfood</div>
+          <h2 class="nat-card-name">Tigernut<br><span style="font-size:24px;color:var(--muted)">Ofio / Aya</span></h2>
+          <p class="nat-card-tagline">Nigeria's ancient superfood — sweet, nutty, and extraordinarily nourishing</p>
+          <p class="nat-card-desc">Tigernuts (known as Ofio in Yoruba and Aya in Hausa) are tiny tubers packed with nutrients. Rich in fibre, healthy fats, vitamins E and C, and natural sugars — they've been consumed in Nigeria for centuries both as a snack and for making the beloved tigernut milk drink. Our tigernuts are carefully harvested, cleaned, and dried to preserve their full nutritional profile.</p>
+          <div class="nat-benefits">
+            <div class="nb">Rich in dietary fibre — supports digestive health</div>
+            <div class="nb">High in magnesium, potassium, and iron</div>
+            <div class="nb">Natural prebiotic — feeds healthy gut bacteria</div>
+            <div class="nb">Gluten-free and dairy-free — suitable for all diets</div>
+            <div class="nb">Available dried, fresh, or as tigernut flour</div>
+          </div>
+          <div class="nat-card-footer">
+            <div class="nat-price">₦1,200 <small>/ 500g pack</small></div>
+            <span class="nat-badge nb-green">Superfood</span>
+            <span class="nat-badge nb-gold">Wholesale Available</span>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
+            <button class="btn-green" onclick="addCart('Tigernut (500g)',1200)">Add to Order</button>
+            <button class="btn-ghost" onclick="waChat('Tigernut')">Ask via WhatsApp</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATES -->
+      <div class="nat-card" id="dates-card">
+        <div class="nat-card-img" style="background:linear-gradient(135deg,#1E0C02,#2A1408)">
+          <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <defs>
+              <radialGradient id="dg" cx="40%" cy="30%"><stop offset="0%" stop-color="#C87820"/><stop offset="100%" stop-color="#5A2A04"/></radialGradient>
+              <radialGradient id="dbg" cx="50%" cy="50%"><stop offset="0%" stop-color="#281002"/><stop offset="100%" stop-color="#100600"/></radialGradient>
+            </defs>
+            <rect width="480" height="420" fill="url(#dbg)"/>
+            <circle cx="240" cy="210" r="150" fill="#8A3A08" opacity="0.08"/>
+            <!-- Date palm fronds (top) -->
+            <path d="M240 60 Q220 80 200 70 Q215 90 210 110" fill="none" stroke="#2A5A1A" stroke-width="3" stroke-linecap="round"/>
+            <path d="M240 60 Q260 80 280 70 Q265 90 270 110" fill="none" stroke="#2A5A1A" stroke-width="3" stroke-linecap="round"/>
+            <path d="M240 60 Q240 40 235 25" fill="none" stroke="#3A6A28" stroke-width="4" stroke-linecap="round"/>
+            <!-- small leaves on frond -->
+            <ellipse cx="205" cy="80" rx="12" ry="5" fill="#2A5A1A" transform="rotate(-30,205,80)"/>
+            <ellipse cx="275" cy="80" rx="12" ry="5" fill="#2A5A1A" transform="rotate(30,275,80)"/>
+            <!-- stem -->
+            <rect x="235" y="55" width="10" height="80" rx="5" fill="#7A4A10"/>
+            <!-- date cluster -->
+            <ellipse cx="210" cy="170" rx="24" ry="30" fill="url(#dg)"/>
+            <ellipse cx="207" cy="165" rx="16" ry="22" fill="#D4901A" opacity="0.6"/>
+            <ellipse cx="212" cy="172" rx="8" ry="12" fill="#E8A020" opacity="0.3"/>
+            <!-- highlight -->
+            <ellipse cx="204" cy="160" rx="6" ry="8" fill="#E8A828" opacity="0.5"/>
+            <ellipse cx="237" cy="165" rx="22" ry="29" fill="#B86C10"/>
+            <ellipse cx="234" cy="160" rx="14" ry="20" fill="#C87818" opacity="0.6"/>
+            <ellipse cx="262" cy="172" rx="23" ry="28" fill="#C07010"/>
+            <ellipse cx="259" cy="167" rx="15" ry="20" fill="#D48820" opacity="0.6"/>
+            <ellipse cx="222" cy="200" rx="22" ry="27" fill="#B86A10"/>
+            <ellipse cx="219" cy="195" rx="14" ry="19" fill="#C87818" opacity="0.6"/>
+            <ellipse cx="250" cy="198" rx="22" ry="27" fill="#C07018"/>
+            <ellipse cx="247" cy="193" rx="14" ry="19" fill="#D48820" opacity="0.6"/>
+            <ellipse cx="235" cy="230" rx="21" ry="26" fill="#B86810"/>
+            <ellipse cx="232" cy="225" rx="13" ry="18" fill="#C87818" opacity="0.6"/>
+            <!-- small dates scattered -->
+            <ellipse cx="155" cy="185" rx="18" ry="23" fill="#A05808"/>
+            <ellipse cx="310" cy="180" rx="17" ry="22" fill="#A85E10"/>
+            <ellipse cx="160" cy="230" rx="16" ry="20" fill="#9A5208"/>
+            <ellipse cx="305" cy="235" rx="17" ry="21" fill="#A55A10"/>
+            <!-- pits visible on some -->
+            <ellipse cx="210" cy="172" rx="4" ry="7" fill="#5A2804" opacity="0.5"/>
+            <ellipse cx="237" cy="168" rx="4" ry="7" fill="#5A2804" opacity="0.4"/>
+            <!-- wooden bowl -->
+            <ellipse cx="240" cy="300" rx="130" ry="48" fill="#5A3010" opacity="0.9"/>
+            <path d="M110 300 Q110 370 240 378 Q370 370 370 300" fill="#4A2808"/>
+            <ellipse cx="240" cy="300" rx="130" ry="48" fill="#6A3818"/>
+            <ellipse cx="240" cy="295" rx="118" ry="42" fill="#7A4A22" opacity="0.8"/>
+            <!-- dates in bowl -->
+            <ellipse cx="200" cy="285" rx="20" ry="14" fill="#C07018" transform="rotate(-15,200,285)"/>
+            <ellipse cx="235" cy="280" rx="22" ry="14" fill="#B86810" transform="rotate(5,235,280)"/>
+            <ellipse cx="268" cy="285" rx="20" ry="14" fill="#C87020" transform="rotate(20,268,285)"/>
+            <ellipse cx="218" cy="298" rx="19" ry="13" fill="#B86010" transform="rotate(-8,218,298)"/>
+            <ellipse cx="258" cy="298" rx="19" ry="13" fill="#C07018" transform="rotate(10,258,298)"/>
+            <text x="240" y="375" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="16" fill="#D4A84B" font-style="italic" opacity="0.9">Premium Date Fruit (Dabino)</text>
+          </svg>
+        </div>
+        <div class="nat-card-body">
+          <div class="nat-card-eye">Natural Sweetener &amp; Superfruit</div>
+          <h2 class="nat-card-name">Dates<br><span style="font-size:24px;color:var(--muted)">Dabino</span></h2>
+          <p class="nat-card-tagline">Nature's perfect sweetener — energy-dense, deeply nutritious, wonderfully sweet</p>
+          <p class="nat-card-desc">Known as Dabino in Hausa-speaking Nigeria, dates are one of the world's most ancient and revered fruits. Our premium dates are sourced from the best suppliers — plump, naturally sweet, and packed with essential minerals. Used as a natural sweetener, snack, or gift, they are a staple of Nigerian healthy living and a perfect alternative to refined sugar in cooking and baking.</p>
+          <div class="nat-benefits">
+            <div class="nb">Excellent natural source of quick energy</div>
+            <div class="nb">High in potassium, magnesium, and iron</div>
+            <div class="nb">Natural sweetener — perfect for diabetic-friendly cooking</div>
+            <div class="nb">Rich in antioxidants — Medjool and Sukkari varieties available</div>
+            <div class="nb">Ideal for gifting, smoothies, and baking</div>
+          </div>
+          <div class="nat-card-footer">
+            <div class="nat-price">₦2,500 <small>/ 1kg box</small></div>
+            <span class="nat-badge nb-gold">Premium Grade</span>
+            <span class="nat-badge nb-green">Natural Sugar</span>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
+            <button class="btn-green" onclick="addCart('Dates — Dabino (1kg)',2500)">Add to Order</button>
+            <button class="btn-ghost" onclick="waChat('Dates')">Ask via WhatsApp</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIBISCUS / ZOBO -->
+      <div class="nat-card" id="zobo-card">
+        <div class="nat-card-img" style="background:linear-gradient(135deg,#1E0410,#2A0618)">
+          <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <defs>
+              <radialGradient id="zg" cx="40%" cy="30%"><stop offset="0%" stop-color="#D42060"/><stop offset="100%" stop-color="#6A0828"/></radialGradient>
+              <radialGradient id="zbg" cx="50%" cy="50%"><stop offset="0%" stop-color="#28040E"/><stop offset="100%" stop-color="#100208"/></radialGradient>
+              <radialGradient id="zmilk" cx="50%" cy="40%"><stop offset="0%" stop-color="#C82050"/><stop offset="100%" stop-color="#8A0830"/></radialGradient>
+            </defs>
+            <rect width="480" height="420" fill="url(#zbg)"/>
+            <circle cx="240" cy="210" r="150" fill="#A01040" opacity="0.08"/>
+            <!-- hibiscus flowers scattered -->
+            <!-- main flower centre -->
+            <g transform="translate(175,185) rotate(-20)">
+              <ellipse cx="0" cy="-32" rx="18" ry="28" fill="url(#zg)"/>
+              <ellipse cx="27" cy="-18" rx="18" ry="28" fill="#C01848" transform="rotate(72)"/>
+              <ellipse cx="17" cy="25" rx="18" ry="28" fill="#D42060" transform="rotate(144)"/>
+              <ellipse cx="-17" cy="25" rx="18" ry="28" fill="#B81848" transform="rotate(216)"/>
+              <ellipse cx="-27" cy="-18" rx="18" ry="28" fill="#C82050" transform="rotate(288)"/>
+              <circle cx="0" cy="0" r="12" fill="#F0C0A0"/>
+              <circle cx="0" cy="0" r="7" fill="#E89070"/>
+              <circle cx="0" cy="-5" r="3" fill="#D06040"/>
+            </g>
+            <!-- second flower -->
+            <g transform="translate(270,175) rotate(15)">
+              <ellipse cx="0" cy="-28" rx="16" ry="25" fill="#B81848"/>
+              <ellipse cx="24" cy="-16" rx="16" ry="25" fill="#C82050" transform="rotate(72)"/>
+              <ellipse cx="15" cy="22" rx="16" ry="25" fill="#D42060" transform="rotate(144)"/>
+              <ellipse cx="-15" cy="22" rx="16" ry="25" fill="#B81848" transform="rotate(216)"/>
+              <ellipse cx="-24" cy="-16" rx="16" ry="25" fill="#C01848" transform="rotate(288)"/>
+              <circle cx="0" cy="0" r="10" fill="#F0B898"/>
+              <circle cx="0" cy="0" r="6" fill="#E08060"/>
+              <circle cx="0" cy="-4" r="2.5" fill="#C05838"/>
+            </g>
+            <!-- third smaller flower -->
+            <g transform="translate(225,240) rotate(35)">
+              <ellipse cx="0" cy="-24" rx="14" ry="22" fill="#C82050"/>
+              <ellipse cx="20" cy="-14" rx="14" ry="22" fill="#D42060" transform="rotate(72)"/>
+              <ellipse cx="13" cy="19" rx="14" ry="22" fill="#B81848" transform="rotate(144)"/>
+              <ellipse cx="-13" cy="19" rx="14" ry="22" fill="#C01848" transform="rotate(216)"/>
+              <ellipse cx="-20" cy="-14" rx="14" ry="22" fill="#D42060" transform="rotate(288)"/>
+              <circle cx="0" cy="0" r="9" fill="#EEB090"/>
+              <circle cx="0" cy="0" r="5" fill="#D87858"/>
+            </g>
+            <!-- dried petals scattered -->
+            <ellipse cx="140" cy="155" rx="12" ry="7" fill="#A01040" transform="rotate(-25,140,155)" opacity="0.9"/>
+            <ellipse cx="310" cy="160" rx="11" ry="6" fill="#B81848" transform="rotate(30,310,160)" opacity="0.9"/>
+            <ellipse cx="145" cy="240" rx="10" ry="6" fill="#9A0A38" transform="rotate(-40,145,240)" opacity="0.8"/>
+            <ellipse cx="315" cy="245" rx="11" ry="6" fill="#A8103A" transform="rotate(20,315,245)" opacity="0.8"/>
+            <ellipse cx="160" cy="285" rx="9" ry="5" fill="#9A0A38" transform="rotate(15,160,285)" opacity="0.7"/>
+            <ellipse cx="300" cy="290" rx="10" ry="5" fill="#B01040" transform="rotate(-10,300,290)" opacity="0.7"/>
+            <!-- leaves -->
+            <ellipse cx="155" cy="195" rx="16" ry="7" fill="#2A5A1A" transform="rotate(-45,155,195)" opacity="0.8"/>
+            <ellipse cx="305" cy="200" rx="15" ry="7" fill="#2A5A1A" transform="rotate(40,305,200)" opacity="0.8"/>
+            <ellipse cx="195" cy="265" rx="14" ry="6" fill="#2A5A1A" transform="rotate(-20,195,265)" opacity="0.7"/>
+            <!-- zobo drink glass -->
+            <rect x="330" y="140" width="85" height="130" rx="6" fill="url(#zmilk)" opacity="0.9"/>
+            <rect x="330" y="140" width="85" height="130" rx="6" fill="none" stroke="#E04080" stroke-width="1.5"/>
+            <ellipse cx="372" cy="140" rx="42" ry="11" fill="#E04080" opacity="0.95"/>
+            <ellipse cx="372" cy="140" rx="42" ry="11" fill="none" stroke="#E04080" stroke-width="1.5"/>
+            <!-- ice cubes in glass -->
+            <rect x="342" y="185" width="22" height="18" rx="3" fill="rgba(255,255,255,0.25)"/>
+            <rect x="358" y="195" width="20" height="17" rx="3" fill="rgba(255,255,255,0.2)"/>
+            <rect x="378" y="183" width="21" height="18" rx="3" fill="rgba(255,255,255,0.22)"/>
+            <!-- straw -->
+            <rect x="385" y="100" width="5" height="120" rx="2.5" fill="#F0C0A0" opacity="0.85"/>
+            <!-- hibiscus petal on rim -->
+            <ellipse cx="348" cy="141" rx="10" ry="6" fill="#D42060" transform="rotate(-30,348,141)"/>
+            <!-- label -->
+            <rect x="340" y="190" width="65" height="45" rx="3" fill="rgba(200,20,70,0.15)"/>
+            <text x="372" y="209" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#F0C0D0" font-weight="600">ZOBO</text>
+            <text x="372" y="224" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#D48090">PRP Spices</text>
+            <!-- pile of dried petals -->
+            <ellipse cx="210" cy="318" rx="80" ry="22" fill="#A01040" opacity="0.4"/>
+            <ellipse cx="210" cy="315" rx="65" ry="16" fill="#B81848" opacity="0.3"/>
+            <text x="240" y="378" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="16" fill="#E04080" font-style="italic" opacity="0.9">Hibiscus Flower (Zobo Leaves)</text>
+          </svg>
+        </div>
+        <div class="nat-card-body">
+          <div class="nat-card-eye">Dried Hibiscus Flowers</div>
+          <h2 class="nat-card-name">Hibiscus<br><span style="font-size:24px;color:var(--muted)">Zobo Leaves</span></h2>
+          <p class="nat-card-tagline">Nigeria's beloved ruby-red drink — bold, tangy, and bursting with health benefits</p>
+          <p class="nat-card-desc">Zobo is arguably Nigeria's most iconic homemade drink — a deeply coloured, tangy, refreshing beverage brewed from dried hibiscus flowers. Our premium zobo leaves are carefully dried, cleaned, and packed to preserve their natural colour, aroma, and the full spectrum of their health-giving compounds. Whether for drinking, cooking, or export, PRP zobo leaves are the finest grade available.</p>
+          <div class="nat-benefits">
+            <div class="nb">Rich in antioxidants — anthocyanins and flavonoids</div>
+            <div class="nb">Supports healthy blood pressure naturally</div>
+            <div class="nb">High in vitamin C — natural immune booster</div>
+            <div class="nb">Vibrant deep-red colour — excellent for natural food dye</div>
+            <div class="nb">Available in small retail packs and large wholesale bags</div>
+          </div>
+          <div class="nat-card-footer">
+            <div class="nat-price">₦800 <small>/ 250g pack</small></div>
+            <span class="nat-badge nb-green">Antioxidant Rich</span>
+            <span class="nat-badge nb-gold">Export Grade</span>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
+            <button class="btn-green" onclick="addCart('Hibiscus Zobo Leaves (250g)',800)">Add to Order</button>
+            <button class="btn-ghost" onclick="waChat('Zobo Hibiscus')">Ask via WhatsApp</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- nat benefits strip -->
+  <div style="background:var(--green);padding:60px 5%">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+      <div style="text-align:center;color:#fff">
+        <div style="font-size:32px;margin-bottom:12px">🌿</div>
+        <h3 style="font-family:var(--serif);font-size:22px;margin-bottom:8px;font-weight:500">100% Natural</h3>
+        <p style="font-size:13px;opacity:0.75;line-height:1.7">No additives, no preservatives. Every product is exactly what nature made it.</p>
+      </div>
+      <div style="text-align:center;color:#fff">
+        <div style="font-size:32px;margin-bottom:12px">🔬</div>
+        <h3 style="font-family:var(--serif);font-size:22px;margin-bottom:8px;font-weight:500">Nutrient-Rich</h3>
+        <p style="font-size:13px;opacity:0.75;line-height:1.7">Each product is selected for its nutritional density and health benefits.</p>
+      </div>
+      <div style="text-align:center;color:#fff">
+        <div style="font-size:32px;margin-bottom:12px">🇳🇬</div>
+        <h3 style="font-family:var(--serif);font-size:22px;margin-bottom:8px;font-weight:500">Proudly Nigerian</h3>
+        <p style="font-size:13px;opacity:0.75;line-height:1.7">Grown, processed, and packed in Nigeria — supporting local farmers and communities.</p>
+      </div>
+      <div style="text-align:center;color:#fff">
+        <div style="font-size:32px;margin-bottom:12px">📦</div>
+        <h3 style="font-family:var(--serif);font-size:22px;margin-bottom:8px;font-weight:500">Bulk Available</h3>
+        <p style="font-size:13px;opacity:0.75;line-height:1.7">Wholesale pricing for distributors, exporters, and large businesses.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- order CTA on nat page -->
+  <section style="background:var(--cream);padding:88px 5%;text-align:center">
+    <p class="eye" style="justify-content:center">Ready to Order?</p>
+    <h2 class="sec-title" style="max-width:560px;margin:0 auto 16px">Order These Natural Products Today</h2>
+    <p class="sec-lead" style="max-width:480px;margin:0 auto 36px">Chat with us on WhatsApp for instant quotes, or place your order using the button below.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <button class="btn-green" onclick="openPayModal()">Place Order &amp; Pay Online</button>
+      <a class="btn-ghost" href="https://wa.me/2348000000000?text=Hi%20PRP%20Spices!%20I%20want%20to%20order%20natural%20products%20(Tigernut%2FDates%2FZobo)" target="_blank">WhatsApp Us Now</a>
+    </div>
+  </section>
+
+</div><!-- end natural page -->
+
+<!-- SHARED FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="fb-name">PRP Spices</div>
+      <div class="fb-sub">PRP General Enterprises &amp; Nigeria Ltd</div>
+      <p class="fb-about">Bringing you the finest natural spices, herbs, and wholesome foods from Nigeria's rich soils. Serving homes and businesses nationwide with pride.</p>
+      <div class="fsocial">
+        <a class="fs-btn" href="https://wa.me/2348000000000" target="_blank" title="WhatsApp">📱</a>
+        <a class="fs-btn" href="#" title="Facebook">📘</a>
+        <a class="fs-btn" href="#" title="Instagram">📸</a>
+        <a class="fs-btn" href="mailto:info@prpspices.com.ng" title="Email">✉️</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h5>Products</h5>
+      <ul>
+        <li><a onclick="showPage('spices')">Spices & Herbs</a></li>
+        <li><a onclick="showPage('natural')">Tigernut</a></li>
+        <li><a onclick="showPage('natural')">Dates (Dabino)</a></li>
+        <li><a onclick="showPage('natural')">Hibiscus (Zobo)</a></li>
+        <li><a onclick="goOrder()">Wholesale</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Company</h5>
+      <ul>
+        <li><a onclick="showPage('home');setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}),200)">About Us</a></li>
+        <li><a onclick="showPage('spices')">Our Spices</a></li>
+        <li><a onclick="showPage('natural')">Natural Products</a></li>
+        <li><a onclick="goOrder()">Contact</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Support</h5>
+      <ul>
+        <li><a onclick="openPayModal()">Pay Online</a></li>
+        <li><a onclick="goOrder()">Track Order</a></li>
+        <li><a onclick="goOrder()">Bulk Enquiry</a></li>
+        <li><a href="https://wa.me/2348000000000" target="_blank">WhatsApp Chat</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2025 PRP General Enterprises &amp; Nigeria Ltd. All rights reserved.</span>
+    <span>Made with pride in Nigeria 🇳🇬</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a class="wa-btn" id="waBtn" href="https://wa.me/2348000000000?text=Hi%20PRP%20Spices!%20I%20would%20like%20to%20place%20an%20order." target="_blank" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div class="wa-tooltip">Chat with us on WhatsApp</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- CART BAR -->
+<div class="cart-bar" id="cartBar">
+  <div class="ci">🛒 <span id="cartCount">0</span> items — Total: <span id="cartTotal">₦0</span></div>
+  <button class="co-btn" onclick="openPayModal()">Pay Now →</button>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="payModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closePayModal()">✕</button>
+    <h3>Complete Your Order</h3>
+    <p>Fill in your details and choose your payment method.</p>
+    <div class="cart-summary">
+      <h4>Order Summary</h4>
+      <div id="cartLines"></div>
+    </div>
+    <div class="fg"><label>Full Name</label><input type="text" id="pay-name" placeholder="e.g. Amaka Okafor"></div>
+    <div class="fg"><label>Email Address</label><input type="email" id="pay-email" placeholder="you@email.com"></div>
+    <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="pay-phone" placeholder="+234 800 000 0000"></div>
+    <div class="fg"><label>Delivery Address</label><input type="text" id="pay-address" placeholder="e.g. 12 Maitama Street, Abuja"></div>
+    <div class="fg"><label>Payment Method</label>
+      <div class="pay-methods">
+        <div class="pm sel" onclick="selectPM(this,'card')" id="pm-card"><span class="pm-icon">💳</span>Card</div>
+        <div class="pm" onclick="selectPM(this,'bank')" id="pm-bank"><span class="pm-icon">🏦</span>Bank Transfer</div>
+        <div class="pm" onclick="selectPM(this,'ussd')" id="pm-ussd"><span class="pm-icon">📱</span>USSD</div>
+      </div>
+    </div>
+    <button class="pay-btn-primary" id="payNowBtn" onclick="payWithPaystack()">Pay Now with Paystack</button>
+    <div class="paystack-note">🔒 Powered by <strong>Paystack</strong> — 100% secure payment processing</div>
+  </div>
+</div>
+
+<!-- PAYSTACK SDK -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<script>
+/* ══════ DATA ══════ */
+const SPICES = [
+  {id:1,name:"Suya Spice Blend",cat:"blend",price:1500,tag:"Bestseller",desc:"The authentic Nigerian suya mix — bold, smoky, and deeply aromatic. The essential spice for perfect grilling.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s1a" cx="50%" cy="50%"><stop offset="0%" stop-color="#3D1A08"/><stop offset="100%" stop-color="#1A0A02"/></radialGradient><radialGradient id="s1b" cx="50%" cy="40%"><stop offset="0%" stop-color="#D4531A"/><stop offset="100%" stop-color="#8B2200"/></radialGradient></defs><rect width="300" height="300" fill="url(#s1a)"/><circle cx="150" cy="160" r="90" fill="#3A1505" opacity="0.8"/><ellipse cx="150" cy="165" rx="78" ry="56" fill="url(#s1b)" opacity="0.95"/><ellipse cx="150" cy="162" rx="62" ry="43" fill="#E05A20" opacity="0.7"/><ellipse cx="150" cy="160" rx="46" ry="30" fill="#F06A28" opacity="0.5"/><circle cx="112" cy="92" r="11" fill="#B83A15" opacity="0.8"/><circle cx="188" cy="82" r="9" fill="#C84520" opacity="0.7"/><circle cx="82" cy="152" r="7" fill="#D45A25" opacity="0.6"/><circle cx="218" cy="142" r="9" fill="#B83015" opacity="0.8"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#D4A84B" font-style="italic">Suya Blend</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#B8892A" opacity="0.7">PRP Spices</text></svg>`},
+  {id:2,name:"Turmeric Powder",cat:"spice",price:900,tag:"Organic",desc:"Vibrant golden turmeric, stone-ground to fine powder. Rich in curcumin and natural colour.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s2a" cx="50%" cy="50%"><stop offset="0%" stop-color="#3A2800"/><stop offset="100%" stop-color="#1A1200"/></radialGradient><radialGradient id="s2b" cx="50%" cy="40%"><stop offset="0%" stop-color="#F4C430"/><stop offset="100%" stop-color="#C88000"/></radialGradient></defs><rect width="300" height="300" fill="url(#s2a)"/><ellipse cx="150" cy="170" rx="82" ry="58" fill="url(#s2b)" opacity="0.95"/><ellipse cx="150" cy="166" rx="66" ry="44" fill="#F0C010" opacity="0.7"/><ellipse cx="150" cy="162" rx="48" ry="30" fill="#F8D040" opacity="0.5"/><ellipse cx="110" cy="96" rx="22" ry="12" fill="#D4A020" transform="rotate(-20,110,96)"/><ellipse cx="190" cy="86" rx="18" ry="10" fill="#C89010" transform="rotate(15,190,86)"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#F4C430" font-style="italic">Turmeric Powder</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#D4A84B" opacity="0.7">PRP Spices</text></svg>`},
+  {id:3,name:"Dried Uziza Leaves",cat:"dried",price:700,tag:"Nigerian",desc:"Sun-dried uziza leaves for soups and stews — authentic West African flavour in every pinch.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s3a" cx="50%" cy="50%"><stop offset="0%" stop-color="#0D2010"/><stop offset="100%" stop-color="#060E06"/></radialGradient></defs><rect width="300" height="300" fill="url(#s3a)"/><ellipse cx="150" cy="160" rx="88" ry="65" fill="#0A1A0A" opacity="0.9"/><ellipse cx="145" cy="155" rx="34" ry="16" fill="#2A5A20" transform="rotate(-40,145,155)"/><ellipse cx="165" cy="145" rx="32" ry="14" fill="#3A6A28" transform="rotate(20,165,145)"/><ellipse cx="135" cy="170" rx="28" ry="13" fill="#2D5A22" transform="rotate(-55,135,170)"/><ellipse cx="168" cy="170" rx="30" ry="13" fill="#35622A" transform="rotate(35,168,170)"/><ellipse cx="148" cy="190" rx="26" ry="12" fill="#2A5020" transform="rotate(-15,148,190)"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="16" fill="#5CB85C" font-style="italic">Dried Uziza Leaves</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A9A4A" opacity="0.7">PRP Spices</text></svg>`},
+  {id:4,name:"Ginger Root Powder",cat:"spice",price:850,tag:"Premium",desc:"Spicy, warming ginger powder from northern Nigeria. Ideal for cooking, teas, and wellness.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s4a" cx="50%" cy="50%"><stop offset="0%" stop-color="#2A1A00"/><stop offset="100%" stop-color="#120C00"/></radialGradient><radialGradient id="s4b" cx="40%" cy="30%"><stop offset="0%" stop-color="#D4A020"/><stop offset="100%" stop-color="#8A6010"/></radialGradient></defs><rect width="300" height="300" fill="url(#s4a)"/><ellipse cx="150" cy="165" rx="85" ry="62" fill="#241500" opacity="0.9"/><path d="M95 155 Q110 130 130 140 Q150 150 145 165 Q138 180 120 185 Q100 180 95 165 Z" fill="url(#s4b)"/><path d="M130 138 Q148 118 165 128 Q178 140 168 155 Q158 162 144 157" fill="#C89010"/><path d="M165 127 Q178 108 192 118 Q202 130 193 142 Q183 148 170 140" fill="#B87A08"/><ellipse cx="150" cy="200" rx="70" ry="30" fill="#C89518" opacity="0.4"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#D4A520" font-style="italic">Ginger Root Powder</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C89010" opacity="0.7">PRP Spices</text></svg>`},
+  {id:5,name:"Efirin (Scent Leaf)",cat:"herb",price:600,tag:"Aromatic",desc:"Aromatic scent leaves, dried to perfection. Essential in Nigerian pepper soup and sauces.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s5a" cx="50%" cy="50%"><stop offset="0%" stop-color="#0A200A"/><stop offset="100%" stop-color="#040C04"/></radialGradient></defs><rect width="300" height="300" fill="url(#s5a)"/><ellipse cx="150" cy="165" rx="90" ry="65" fill="#0A1A0A" opacity="0.8"/><ellipse cx="148" cy="148" rx="38" ry="20" fill="#3A7A28" transform="rotate(-25,148,148)"/><ellipse cx="162" cy="152" rx="34" ry="18" fill="#4A8A32" transform="rotate(15,162,152)"/><ellipse cx="138" cy="168" rx="30" ry="16" fill="#3A7020" transform="rotate(-40,138,168)"/><ellipse cx="165" cy="170" rx="32" ry="17" fill="#457828" transform="rotate(30,165,170)"/><ellipse cx="150" cy="188" rx="28" ry="15" fill="#3A7028" transform="rotate(-10,150,188)"/><line x1="148" y1="138" x2="146" y2="168" stroke="#1A5010" stroke-width="2"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#5CB85C" font-style="italic">Efirin (Scent Leaf)</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A9A4A" opacity="0.7">PRP Spices</text></svg>`},
+  {id:6,name:"Cloves (Kanafuru)",cat:"spice",price:1200,tag:"Whole",desc:"Whole cloves with intense aroma. Used in stews, jollof rice, and herbal medicine.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s6a" cx="50%" cy="50%"><stop offset="0%" stop-color="#1A0A04"/><stop offset="100%" stop-color="#0A0402"/></radialGradient></defs><rect width="300" height="300" fill="url(#s6a)"/><ellipse cx="150" cy="165" rx="88" ry="64" fill="#160802" opacity="0.9"/><g><ellipse cx="130" cy="145" rx="6" ry="10" fill="#3A1808" transform="rotate(-15,130,145)"/><path d="M130 135 Q131 125 130 118" stroke="#2A1005" stroke-width="2.5" fill="none" stroke-linecap="round"/><ellipse cx="148" cy="138" rx="6" ry="10" fill="#4A2010" transform="rotate(5,148,138)"/><path d="M148 128 Q149 118 148 111" stroke="#2A1005" stroke-width="2.5" fill="none" stroke-linecap="round"/><ellipse cx="166" cy="142" rx="6" ry="10" fill="#3A1808" transform="rotate(20,166,142)"/><path d="M165 132 Q166 122 165 115" stroke="#2A1005" stroke-width="2.5" fill="none" stroke-linecap="round"/><ellipse cx="138" cy="172" rx="6" ry="10" fill="#4A2010" transform="rotate(-5,138,172)"/><path d="M138 162 Q139 152 138 145" stroke="#2A1005" stroke-width="2.5" fill="none" stroke-linecap="round"/><ellipse cx="157" cy="168" rx="6" ry="10" fill="#3A1808" transform="rotate(10,157,168)"/><path d="M157 158 Q158 148 157 141" stroke="#2A1005" stroke-width="2.5" fill="none" stroke-linecap="round"/></g><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#C89050" font-style="italic">Cloves (Kanafuru)</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#B8892A" opacity="0.7">PRP Spices</text></svg>`},
+  {id:7,name:"Moringa Leaf Powder",cat:"herb",price:1100,tag:"Superfood",desc:"Nutrient-dense moringa powder — for health teas, smoothies, soups, and cooking.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s7a" cx="50%" cy="50%"><stop offset="0%" stop-color="#0A2510"/><stop offset="100%" stop-color="#040E06"/></radialGradient><radialGradient id="s7b" cx="50%" cy="40%"><stop offset="0%" stop-color="#5CB85C"/><stop offset="100%" stop-color="#2D6A2D"/></radialGradient></defs><rect width="300" height="300" fill="url(#s7a)"/><ellipse cx="150" cy="170" rx="88" ry="62" fill="#0A1E0A" opacity="0.9"/><ellipse cx="150" cy="175" rx="75" ry="50" fill="url(#s7b)" opacity="0.9"/><ellipse cx="150" cy="170" rx="60" ry="38" fill="#6AC86A" opacity="0.7"/><path d="M150 95 L155 115 L165 100 L160 120 L175 108 L165 125 L180 118 L168 132 L152 148 L148 148 L130 140 L120 118 L135 125 L125 108 L140 120 L135 100 L145 115 Z" fill="#3A8A3A" opacity="0.85"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="16" fill="#5CB85C" font-style="italic">Moringa Leaf Powder</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A9A4A" opacity="0.7">PRP Spices</text></svg>`},
+  {id:8,name:"Cameroon Pepper",cat:"spice",price:950,tag:"Hot & Fiery",desc:"The prized Cameroon pepper — boldly hot, deeply flavourful, essential in Nigerian cooking.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s8a" cx="50%" cy="50%"><stop offset="0%" stop-color="#2A0808"/><stop offset="100%" stop-color="#100202"/></radialGradient><radialGradient id="s8b" cx="40%" cy="30%"><stop offset="0%" stop-color="#E82020"/><stop offset="100%" stop-color="#6A0808"/></radialGradient></defs><rect width="300" height="300" fill="url(#s8a)"/><ellipse cx="150" cy="170" rx="74" ry="52" fill="url(#s8b)" opacity="0.9"/><ellipse cx="150" cy="170" rx="58" ry="38" fill="#E83030" opacity="0.7"/><path d="M110 120 Q125 95 140 110 Q155 125 148 145 Q138 158 118 150 Q105 138 110 120Z" fill="url(#s8b)"/><path d="M125 94 Q128 82 122 75" stroke="#1A4008" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M170 115 Q185 88 198 102 Q208 118 195 135 Q180 145 165 135 Q155 122 170 115Z" fill="#C81A1A"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#E85050" font-style="italic">Cameroon Pepper</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C83030" opacity="0.7">PRP Spices</text></svg>`},
+  {id:9,name:"Ground Crayfish",cat:"dried",price:1300,tag:"Rich Flavour",desc:"Finely ground dried crayfish — the secret weapon of Nigerian soups. Deep umami in every dish.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s9a" cx="50%" cy="50%"><stop offset="0%" stop-color="#2A1200"/><stop offset="100%" stop-color="#100800"/></radialGradient><radialGradient id="s9b" cx="50%" cy="40%"><stop offset="0%" stop-color="#E87020"/><stop offset="100%" stop-color="#8A3A08"/></radialGradient></defs><rect width="300" height="300" fill="url(#s9a)"/><ellipse cx="150" cy="174" rx="74" ry="52" fill="url(#s9b)" opacity="0.9"/><ellipse cx="150" cy="170" rx="58" ry="38" fill="#E87828" opacity="0.7"/><path d="M100 135 Q115 105 130 120 Q145 135 135 155 Q122 165 105 155 Q95 145 100 135Z" fill="#D06018"/><path d="M115 104 Q118 92 112 85" stroke="#604010" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M158 128 Q172 100 186 115 Q197 130 186 150 Q173 160 158 150 Q148 140 158 128Z" fill="#C05815"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#E87020" font-style="italic">Ground Crayfish</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C86018" opacity="0.7">PRP Spices</text></svg>`},
+  {id:10,name:"Negro Pepper (Uda)",cat:"spice",price:800,tag:"Traditional",desc:"Uniquely Nigerian Uda pepper with smoky, peppery notes for soups and pepper soup.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s10a" cx="50%" cy="50%"><stop offset="0%" stop-color="#1A1208"/><stop offset="100%" stop-color="#0A0804"/></radialGradient></defs><rect width="300" height="300" fill="url(#s10a)"/><path d="M105 160 Q100 120 120 110 Q140 102 150 115 Q160 102 180 110 Q200 120 195 160 Q190 195 150 200 Q110 195 105 160Z" fill="#2A1E0A" stroke="#3A2A10" stroke-width="1.5"/><ellipse cx="150" cy="165" rx="40" ry="18" fill="#3A2A10"/><ellipse cx="150" cy="162" rx="32" ry="14" fill="#4A3820"/><line x1="150" y1="200" x2="150" y2="215" stroke="#2A1A08" stroke-width="3"/><ellipse cx="150" cy="216" rx="8" ry="4" fill="#2A1A08"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" fill="#C8A040" font-style="italic">Negro Pepper (Uda)</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#B8892A" opacity="0.7">PRP Spices</text></svg>`},
+  {id:11,name:"Onion Powder",cat:"blend",price:750,tag:"Essential",desc:"Fine-milled dried Nigerian onion powder — bold, sweet, and deeply savoury. A pantry staple.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s11a" cx="50%" cy="50%"><stop offset="0%" stop-color="#2A1A00"/><stop offset="100%" stop-color="#120A00"/></radialGradient><radialGradient id="s11b" cx="50%" cy="35%"><stop offset="0%" stop-color="#F0D080"/><stop offset="100%" stop-color="#A07820"/></radialGradient></defs><rect width="300" height="300" fill="url(#s11a)"/><ellipse cx="150" cy="174" rx="74" ry="52" fill="url(#s11b)" opacity="0.9"/><ellipse cx="150" cy="170" rx="58" ry="38" fill="#E8C860" opacity="0.7"/><ellipse cx="148" cy="128" rx="28" ry="32" fill="none" stroke="#C8A030" stroke-width="3" opacity="0.7"/><ellipse cx="148" cy="128" rx="20" ry="24" fill="none" stroke="#D4B040" stroke-width="2" opacity="0.6"/><ellipse cx="148" cy="128" rx="12" ry="16" fill="#D4B040" opacity="0.4"/><path d="M148 96 Q150 82 148 74" stroke="#4A8020" stroke-width="2.5" fill="none" stroke-linecap="round"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" fill="#D4A84B" font-style="italic">Onion Powder</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#B8892A" opacity="0.7">PRP Spices</text></svg>`},
+  {id:12,name:"Pepper Soup Spice",cat:"blend",price:1400,tag:"Signature Blend",desc:"Our signature blend — Uda, Ehuru, Uziza, and traditional Nigerian spices, perfectly balanced.",
+  svg:`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="s12a" cx="50%" cy="50%"><stop offset="0%" stop-color="#2A0E04"/><stop offset="100%" stop-color="#100602"/></radialGradient><radialGradient id="s12b" cx="50%" cy="40%"><stop offset="0%" stop-color="#C84020"/><stop offset="100%" stop-color="#601008"/></radialGradient></defs><rect width="300" height="300" fill="url(#s12a)"/><ellipse cx="150" cy="174" rx="74" ry="52" fill="url(#s12b)" opacity="0.9"/><ellipse cx="150" cy="170" rx="58" ry="38" fill="#D04828" opacity="0.7"/><ellipse cx="130" cy="120" rx="14" ry="8" fill="#2A5A20" transform="rotate(-30,130,120)"/><path d="M140 110 Q160 85 172 100 Q180 115 168 128 Q155 135 143 125Z" fill="#8A2010"/><path d="M160 84 Q163 72 157 65" stroke="#1A4008" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="178" cy="120" r="5" fill="#4A1A08"/><circle cx="184" cy="130" r="5" fill="#5A2010"/><text x="150" y="252" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" fill="#E87060" font-style="italic">Pepper Soup Spice</text><text x="150" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C85040" opacity="0.7">PRP Spices</text></svg>`}
+];
+
+const GALLERY_ITEMS = [
+  {label:"Turmeric & Ginger", bg:"#2A1800", svg:SPICES[1].svg},
+  {label:"Suya Spice Blend", bg:"#2A0A02", svg:SPICES[0].svg},
+  {label:"Fresh Scent Herb", bg:"#0A1E0A", svg:SPICES[4].svg},
+  {label:"Whole Cloves", bg:"#140602", svg:SPICES[5].svg},
+  {label:"Moringa Powder", bg:"#0A2010", svg:SPICES[6].svg},
+  {label:"Cameroon Pepper", bg:"#200606", svg:SPICES[7].svg},
+  {label:"Ground Crayfish", bg:"#1E0C00", svg:SPICES[8].svg},
+  {label:"Pepper Soup Blend", bg:"#1E0804", svg:SPICES[11].svg},
+];
+
+/* ══════ CART STATE ══════ */
+let cartItems = [];
+let payMethod = 'card';
+
+function addCart(name, price){
+  cartItems.push({name, price});
+  const total = cartItems.reduce((s,i)=>s+i.price,0);
+  document.getElementById('cartBadge').textContent = cartItems.length;
+  document.getElementById('cartCount').textContent = cartItems.length;
+  document.getElementById('cartTotal').textContent = '₦'+total.toLocaleString();
+  document.getElementById('cartBar').classList.add('show');
+  showToast(name + ' added to order ✓');
+}
+
+/* ══════ RENDER ══════ */
+function renderSpices(cat){
+  const list = cat==='all' ? SPICES : SPICES.filter(p=>p.cat===cat);
+  return list.map(p=>`
+    <div class="pc">
+      <div class="pc-img" style="background:#0F0800">${p.svg}<div class="pc-badge">${p.tag}</div></div>
+      <div class="pc-body">
+        <div class="pc-name">${p.name}</div>
+        <div class="pc-desc">${p.desc}</div>
+        <div class="pc-foot">
+          <div class="pc-price">₦${p.price.toLocaleString()}<small> / pack</small></div>
+          <button class="pc-add" onclick="addCart('${p.name}',${p.price})">Add to Order</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filterS(cat, btn){
+  document.querySelectorAll('#page-spices .fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('spiceGrid').innerHTML = renderSpices(cat);
+}
+
+function renderGallery(){
+  document.getElementById('galGrid').innerHTML = GALLERY_ITEMS.map(g=>`
+    <div class="gi" style="background:${g.bg}">${g.svg}<div class="gi-lbl">${g.label}</div></div>`).join('');
+}
+
+function renderFeatured(){
+  const feat = [SPICES[0],SPICES[1],SPICES[6],SPICES[7]];
+  document.getElementById('featGrid').innerHTML = feat.map(p=>`
+    <div class="pc">
+      <div class="pc-img" style="background:#0F0800">${p.svg}<div class="pc-badge">${p.tag}</div></div>
+      <div class="pc-body">
+        <div class="pc-name">${p.name}</div>
+        <div class="pc-desc">${p.desc}</div>
+        <div class="pc-foot">
+          <div class="pc-price">₦${p.price.toLocaleString()}<small> / pack</small></div>
+          <button class="pc-add" onclick="addCart('${p.name}',${p.price})">Add to Order</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+/* ══════ PAGE NAV ══════ */
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const el = document.getElementById('nav-'+id);
+  if(el) el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='spices') document.getElementById('spiceGrid').innerHTML = renderSpices('all');
+  return false;
+}
+
+function goOrder(){
+  showPage('home');
+  setTimeout(()=>document.getElementById('order-sec').scrollIntoView({behavior:'smooth'}),200);
+  return false;
+}
+
+/* ══════ PAYMENT MODAL ══════ */
+function openPayModal(){
+  const lines = document.getElementById('cartLines');
+  if(cartItems.length === 0){
+    lines.innerHTML = '<div class="cart-line"><span>No items yet — add products first</span></div>';
+  } else {
+    let html = cartItems.map(i=>`<div class="cart-line"><span>${i.name}</span><span>₦${i.price.toLocaleString()}</span></div>`).join('');
+    const total = cartItems.reduce((s,i)=>s+i.price,0);
+    html += `<div class="cart-line"><span>Total</span><span>₦${total.toLocaleString()}</span></div>`;
+    lines.innerHTML = html;
+  }
+  document.getElementById('payModal').classList.add('show');
+}
+
+function closePayModal(){
+  document.getElementById('payModal').classList.remove('show');
+}
+
+function selectPM(el, method){
+  document.querySelectorAll('.pm').forEach(p=>p.classList.remove('sel'));
+  el.classList.add('sel');
+  payMethod = method;
+}
+
+function payWithPaystack(){
+  const name = document.getElementById('pay-name').value.trim();
+  const email = document.getElementById('pay-email').value.trim();
+  const phone = document.getElementById('pay-phone').value.trim();
+  if(!name || !email){
+    showToast('Please enter your name and email to proceed');
+    return;
+  }
+  if(cartItems.length === 0){
+    showToast('Please add items to your order first');
+    return;
+  }
+  const total = cartItems.reduce((s,i)=>s+i.price,0);
+  // ⚠️  REPLACE 'pk_test_xxxxxxxxxx' with your real Paystack public key from paystack.com/dashboard
+  const handler = PaystackPop.setup({
+    key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    email: email,
+    amount: total * 100, // Paystack uses kobo
+    currency: 'NGN',
+    ref: 'PRP-' + Math.floor(Math.random()*1000000000),
+    metadata: {
+      custom_fields:[
+        {display_name:"Customer Name",variable_name:"customer_name",value:name},
+        {display_name:"Phone",variable_name:"phone",value:phone},
+        {display_name:"Items",variable_name:"items",value:cartItems.map(i=>i.name).join(', ')}
+      ]
+    },
+    channels: payMethod==='card' ? ['card'] : payMethod==='bank' ? ['bank_transfer'] : ['ussd'],
+    callback: function(response){
+      closePayModal();
+      cartItems = [];
+      document.getElementById('cartBadge').textContent = '0';
+      document.getElementById('cartCount').textContent = '0';
+      document.getElementById('cartTotal').textContent = '₦0';
+      document.getElementById('cartBar').classList.remove('show');
+      showToast('Payment successful! Order confirmed ✓ Ref: '+response.reference);
+    },
+    onClose: function(){
+      showToast('Payment window closed — your cart is saved');
+    }
+  });
+  handler.openIframe();
+}
+
+/* ══════ FORMS ══════ */
+function submitForm(){
+  const fn = document.getElementById('fn').value.trim();
+  const ph = document.getElementById('ph').value.trim();
+  if(!fn||!ph){showToast('Please enter your name and phone number');return;}
+  showToast('Message sent! We\'ll be in touch within 24 hours ✓');
+  ['fn','ln','ph','em','loc','otype','msg'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+}
+
+function waChat(product){
+  const msg = 'Hi PRP Spices! I would like to enquire about ' + product + '. Please send me more information and pricing.';
+  window.open('https://wa.me/2348000000000?text='+encodeURIComponent(msg), '_blank');
+}
+
+/* ══════ TOAST ══════ */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('on');
+  clearTimeout(t._t);
+  t._t = setTimeout(()=>t.classList.remove('on'), 3000);
+}
+
+/* ══════ INIT ══════ */
+renderFeatured();
+renderGallery();
+document.getElementById('spiceGrid').innerHTML = renderSpices('all');
+
+// Close modal on overlay click
+document.getElementById('payModal').addEventListener('click',function(e){
+  if(e.target===this) closePayModal();
+});
+</script>
+</body>
+</html>
